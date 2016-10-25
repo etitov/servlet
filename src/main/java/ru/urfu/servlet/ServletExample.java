@@ -77,6 +77,12 @@ public class ServletExample extends HttpServlet {
 		out.write("<h1>hello my dear friend</h1>");
 	}
 
+	protected void doGet_6(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+		RequestDispatcher requestDispatcher; 
+		requestDispatcher = req.getRequestDispatcher("/form.jsp");
+		requestDispatcher.forward(req, resp);
+	}
+	
 	@Override
 	protected void service(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		System.out.println("service ServletExample");
